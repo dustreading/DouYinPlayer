@@ -9,6 +9,10 @@ import okhttp3.*
 import java.io.IOException
 
 interface HomePresenter {
+    companion object {
+        val TYPE_INIT_OR_REFRESH = 1
+        val TYPE_LOAD_MORE = 2
+    }
 
     /**
      * 上拉加载数据
