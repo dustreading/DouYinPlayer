@@ -3,22 +3,14 @@ package com.whuuuuu.douyinplayer.ui.fragment
 import android.graphics.Color
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.Gravity
 import android.view.View
-import android.widget.TextView
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.whuuuuu.douyinplayer.R
 import com.whuuuuu.douyinplayer.adapter.HomeAdapter
 import com.whuuuuu.douyinplayer.base.BaseFragment
 import com.whuuuuu.douyinplayer.model.HomeItemBean
 import com.whuuuuu.douyinplayer.presenter.impi.HomePresenterImpl
-import com.whuuuuu.douyinplayer.util.ThreadUtil
-import com.whuuuuu.douyinplayer.util.URLProviderUtils
 import com.whuuuuu.douyinplayer.view.HomeView
-import kotlinx.android.synthetic.main.fragment_home.*
-import okhttp3.*
-import java.io.IOException
+import kotlinx.android.synthetic.main.fragment_list.*
 
 class HomeFragment:BaseFragment(), HomeView {
     override fun onError(list: String?) {
@@ -40,7 +32,7 @@ class HomeFragment:BaseFragment(), HomeView {
     val adapter by lazy { HomeAdapter() }
     val presenter by lazy { HomePresenterImpl(this) }
     override fun initView(): View? {
-        return View.inflate(context, R.layout.fragment_home, null)
+        return View.inflate(context, R.layout.fragment_list, null)
     }
 
     override fun initListener() {

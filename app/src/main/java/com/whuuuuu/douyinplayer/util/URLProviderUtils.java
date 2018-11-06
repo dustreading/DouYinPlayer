@@ -77,7 +77,7 @@ public class URLProviderUtils {
                 + "\"clid\":110025000}"
                 + "&offset=" + offset
                 + "&size=" + size;
-        return url;
+        return "http://47.106.120.64:5000/love/" + offset;
     }
 
     /**
