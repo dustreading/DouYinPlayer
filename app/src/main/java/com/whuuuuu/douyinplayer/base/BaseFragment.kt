@@ -34,7 +34,7 @@ abstract class BaseFragment :Fragment(), AnkoLogger{
     /**
      * fragment初始化
      */
-    protected fun init() {
+    open protected fun init() {
 
     }
 
