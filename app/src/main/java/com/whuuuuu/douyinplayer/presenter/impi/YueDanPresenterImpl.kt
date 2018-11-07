@@ -14,6 +14,8 @@ class YueDanPresenterImpl(var yueDanView: YueDanView):YueDanPresenter, ResponseH
     override fun onSuccess(type: Int, result: YueDanBean) {
         if(type==YueDanPresenter.TYPE_INIT_OR_REFRESH){
             yueDanView.loadSuccess(result)
+        }else if(type==YueDanPresenter.TYPE_LOAD_MORE){
+            yueDanView.loadMore(result)
         }
     }
 
@@ -22,5 +24,6 @@ class YueDanPresenterImpl(var yueDanView: YueDanView):YueDanPresenter, ResponseH
     }
 
     override fun loadMore(offset: Int) {
+        YueDanRequest(YueDanPresenter.TYPE_LOAD_MORE, offset, this).excute()
     }
 }
